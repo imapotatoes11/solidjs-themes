@@ -6,7 +6,7 @@ const config: PlaywrightTestConfig = {
   reporter: process.env.CI ? 'github' : 'list',
   testDir: './test',
   webServer: {
-    command: 'pnpm start --filter=example...',
+    command: 'pnpm start --filter=solidstart-example...',
     port: 3000,
     reuseExistingServer: !process.env.CI,
     timeout: 120 * 1000
