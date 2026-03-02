@@ -1,0 +1,170 @@
+/* ──────────────────────────────────────────────────────────────────────────
+   Base reset
+   ────────────────────────────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   Light theme (default)
+   ────────────────────────────────────────────────────────────────────────── */
+:root,
+[data-theme="light"] {
+  --bg: #ffffff;
+  --bg-card: #f5f5f5;
+  --fg: #111111;
+  --fg-muted: #555555;
+  --border: #dddddd;
+  --accent: #0066cc;
+  --accent-hover: #0052a3;
+  --btn-bg: #0066cc;
+  --btn-fg: #ffffff;
+  --btn-active-bg: #0052a3;
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   Dark theme
+   ────────────────────────────────────────────────────────────────────────── */
+[data-theme="dark"] {
+  --bg: #1a1a2e;
+  --bg-card: #16213e;
+  --fg: #e0e0e0;
+  --fg-muted: #9090a0;
+  --border: #333355;
+  --accent: #4da6ff;
+  --accent-hover: #80c0ff;
+  --btn-bg: #4da6ff;
+  --btn-fg: #000000;
+  --btn-active-bg: #80c0ff;
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   Custom: Solarized
+   ────────────────────────────────────────────────────────────────────────── */
+[data-theme="solarized"] {
+  --bg: #fdf6e3;
+  --bg-card: #eee8d5;
+  --fg: #657b83;
+  --fg-muted: #93a1a1;
+  --border: #d3c7a3;
+  --accent: #268bd2;
+  --accent-hover: #1b6eb5;
+  --btn-bg: #268bd2;
+  --btn-fg: #ffffff;
+  --btn-active-bg: #1b6eb5;
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   Custom: Nord
+   ────────────────────────────────────────────────────────────────────────── */
+[data-theme="nord"] {
+  --bg: #2e3440;
+  --bg-card: #3b4252;
+  --fg: #d8dee9;
+  --fg-muted: #9099aa;
+  --border: #4c566a;
+  --accent: #88c0d0;
+  --accent-hover: #81a1c1;
+  --btn-bg: #88c0d0;
+  --btn-fg: #2e3440;
+  --btn-active-bg: #81a1c1;
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   Layout
+   ────────────────────────────────────────────────────────────────────────── */
+html, body {
+  background-color: var(--bg);
+  color: var(--fg);
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--fg);
+}
+
+h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.75rem;
+  color: var(--fg);
+}
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.4rem 1rem;
+  font-size: 0.9rem;
+}
+
+dt {
+  font-weight: 600;
+  color: var(--fg-muted);
+}
+
+code {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.1rem 0.4rem;
+  font-size: 0.85em;
+  color: var(--accent);
+}
+
+p {
+  color: var(--fg-muted);
+  margin-bottom: 0.5rem;
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   Buttons
+   ────────────────────────────────────────────────────────────────────────── */
+button {
+  background: var(--btn-bg);
+  color: var(--btn-fg);
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background-color 0.15s ease;
+}
+
+button:hover {
+  background: var(--btn-active-bg);
+}
+
+button.active {
+  outline: 2px solid var(--fg);
+  outline-offset: 2px;
+}
+
+.theme-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
