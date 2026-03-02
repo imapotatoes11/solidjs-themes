@@ -1,6 +1,39 @@
-# next-themes ![next-themes minzip package size](https://img.shields.io/bundlephobia/minzip/next-themes) [![Version](https://img.shields.io/npm/v/next-themes.svg?colorB=green)](https://www.npmjs.com/package/next-themes)
+# solidjs-themes + next-themes monorepo
 
-An abstraction for themes in your React app.
+This repository contains:
+
+| Package | Description | Docs |
+|---|---|---|
+| [`solidjs-themes`](./packages/solidjs-themes/) | **SolidJS / SolidStart port of next-themes** | [README](./packages/solidjs-themes/README.md) |
+| [`next-themes`](./next-themes/) | Original React / Next.js library (upstream reference) | below |
+
+---
+
+## solidjs-themes – quick start
+
+```bash
+npm install solidjs-themes
+```
+
+```tsx
+import { ThemeProvider, useTheme } from 'solidjs-themes'
+
+// Wrap your app:
+<ThemeProvider defaultTheme="system">…</ThemeProvider>
+
+// Inside any component:
+const { theme, setTheme } = useTheme()
+<button onClick={() => setTheme('dark')}>{theme()}</button>
+```
+
+See [`packages/solidjs-themes/README.md`](./packages/solidjs-themes/README.md)
+for the full API reference, SSR/FOUC guidance, and migration notes.
+
+---
+
+## next-themes (original)
+
+> An abstraction for themes in your React app.
 
 - ✅ Perfect dark mode in 2 lines of code
 - ✅ System setting with prefers-color-scheme
