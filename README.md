@@ -1,4 +1,10 @@
-## quick start
+# Solidjs Themes
+
+This is a port of [next-themes](https://github.com/pacocoursey/next-themes).
+
+Most of it was vibe coded but everything should be working.
+
+## Quick Start
 
 ```bash
 npm install solidjs-themes
